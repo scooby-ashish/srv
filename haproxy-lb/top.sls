@@ -1,0 +1,4 @@
+loadbalancer:
+  'haproxy-lb':
+    - haproxy
+ 
