@@ -5,3 +5,5 @@ on top of two nginx webserver, haproxy lb is running and being monitered by prom
 let's see whether changes present to saltmaster or not
 
 haproxy -c -f /etc/haproxy/haproxy.cfg
+
+sudo salt 'ha*' state.highstate saltenv=loadbalancer
