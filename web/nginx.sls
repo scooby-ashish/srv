@@ -38,7 +38,7 @@ sync index_file:
     - source: salt://index.html
     - user: root
     - group: root
-    - mode: 600
+    - mode: 755
 
 sync httpd.conf:
   file.managed:
