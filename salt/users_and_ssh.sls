@@ -9,6 +9,8 @@ manage_my_ssh_key:
   file.managed:
 {% if grains['fqdn'] == 'sm2.infra.svc.dev-lab.bgl.prajaas'%}
     - name: /home/prajaas/.ssh/{{ pillar['my_ssh_key_name'] }}
+{% elif grains['fqdn'] == 'sm3.infra.svc.dev-lab.bgl.prajaas'%}
+    - name: /home/prajaas/.ssh/{{ pillar['my_ssh_key_name'] }}
 {% elif grains['fqdn'] == 'haproxy'%}
     - name: /home/haproxy/.ssh/{{ pillar['my_ssh_key_name'] }}
 {% else %}
