@@ -35,7 +35,11 @@ sync webserver_configuration:
 sync index_file:
   file.managed:
     - name: /var/www/html/index.html
+{% if grains['fqdn'] == 'sm2.infra.svc.dev-lab.bgl.prajaas' %}
+    - source: salt://ng2/index.html
+{% elif grains['fqdn'] == 'sm3.infra.svc.dev-lab.bgl.prajaas' %}
     - source: salt://index.html
+{% endif %}
     - user: root
     - group: root
     - mode: 755
